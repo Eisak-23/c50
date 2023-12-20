@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import ScreenManager, Screen
 from eth_account import Account
@@ -87,17 +88,31 @@ class MainScreen(Screen):
         super(MainScreen, self).__init__(**kwargs)
 
         # Layout
-        layout = BoxLayout(orientation='vertical')
+        layout = BoxLayout(orientation='vertical', spacing=10, pos_hint={'right': 1})
 
         # Registro / Inicio de sesión
-        self.register_button = Button(text='Registrarse', on_press=self.register_user)
-        self.login_button = Button(text='Iniciar Sesión', on_press=self.login_user)
+        self.register_button = Button(text='Registrarse', on_press=self.register_user, size=(200, 50), padding=(10, 50), size_hint=(None, None))
+        self.login_button = Button(text='Iniciar Sesión', on_press=self.login_user, size=(200, 50), padding=(10, 50), size_hint=(None, None))
+       
+        # Crear dos campos de entrada
+        self.username_input = TextInput(hint_text='Username', multiline=False)
+        self.password_input = TextInput(hint_text='Password', multiline=False, password=True)
+
+        # Crear un botón para realizar la validación
+        self.login_button = Button(text='Login', on_press=self.login_user)
+
+        # Agregar los elementos al diseño
+        self.add_widget(self.username_input)
+        self.add_widget(self.password_input)
+        self.add_widget(self.login_button)
 
         # Agregar widgets al layout
         layout.add_widget(self.register_button)
         layout.add_widget(self.login_button)
-
+        layout.pos_hint = {'center_x': 0.85, 'center_y': 0.85}
         self.add_widget(layout)
+
+
 
     def register_user(self, instance):
         # Cambiar a la pantalla de registro
@@ -106,12 +121,10 @@ class MainScreen(Screen):
         self.manager.get_screen('registration').register_user()
 
     def login_user(self, instance):
-        user_input = self.text_input.text
-        if user_input in self.manager.get_screen('registration').users:
-            print(f"Inicio de sesión exitoso para el usuario con dirección: {user_input}")
-        else:
-            print("Usuario no encontrado. Regístrate primero.")
-
+        username = self.username_input.text
+        password = self.password_input.text
+        print("Username:", username)
+        print("Password:", password)
 
 class ChatBoxApp(App):
     def build(self):
