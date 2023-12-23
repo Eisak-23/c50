@@ -1,61 +1,72 @@
-# Proyecto de ChatBox en Kivy
+# ChatBlock Project in Kivy: Exploring Blockchain Concepts
 
-## Descripción del Proyecto
+## Project Description
 
-El proyecto ChatBox es una aplicación interactiva desarrollada en Kivy, un marco de interfaz de usuario de Python para aplicaciones multitáctiles. La aplicación simula un sistema de chat interactivo centrado en conceptos relacionados con blockchain.
+The ChatBlock project is an interactive application developed in Kivy, a Python user interface framework for multitouch applications. The application simulates an interactive chat system centered around concepts related to blockchain.
 
-## Estructura de Archivos
+## File Structure
 
-### Archivos Principales
+### Main Files
 
-1.  **main.py**: El archivo principal que contiene la lógica principal de la aplicación.
-2.  **giphy.gif**: Una imagen utilizada como fondo en varias pantallas de la aplicación.
+1.  **main.py**: The main file containing the core logic of the application.
+2.  **giphy.gif**: An image used as a background in various screens of the application.
 
-### Clases y Módulos
+### Classes and Modules
 
-1.  **HelloWorldScreen (hello_world_screen.py)**: Una clase que define la pantalla principal de la aplicación. Contiene un cuadro de entrada de texto, un botón de envío y responde a comandos específicos relacionados con blockchain.
+1.  **HelloWorldScreen (hello_world_screen.py)**: A class defining the main screen of the application. It includes a text input box, a submit button, and responds to specific commands related to blockchain.
     
-2.  **LoginScreen (login_screen.py)**: Clase que implementa la pantalla de inicio de sesión. Permite a los usuarios ingresar su dirección y una frase mnemotécnica para acceder a la aplicación.
+2.  **LoginScreen (login_screen.py)**: A class implementing the login screen. It allows users to enter their address and a mnemonic phrase to access the application.
     
-3.  **RegistrationScreen (registration_screen.py)**: Clase que gestiona la pantalla de registro de usuarios. Genera una dirección, una frase mnemotécnica y una clave privada para el usuario y muestra esta información.
+3.  **RegistrationScreen (registration_screen.py)**: A class managing the user registration screen. It generates an address, a mnemonic phrase, and a private key for the user and displays this information.
     
-4.  **MainScreen (main_screen.py)**: Clase que define la pantalla principal de la aplicación. Proporciona opciones para registrarse e iniciar sesión.
+4.  **MainScreen (main_screen.py)**: A class defining the main screen of the application. It provides options to register and log in.
     
-5.  **ChatBoxApp (main.py)**: La clase principal que inicializa y ejecuta la aplicación Kivy.
-    
-
-### Librerías Externas
-
-1.  **eth_account**: Utilizado para manejar cuentas de Ethereum, derivar claves privadas y verificar la validez de las frases mnemotécnicas.
-2.  **mnemonic**: Utilizado para generar frases mnemotécnicas aleatorias.
-3.  **web3**: Utilizado para interactuar con nodos Ethereum y obtener información, como saldos y números de bloque.
-
-## Uso de la Aplicación
-
-1.  **Inicio de Sesión**: Al hacer clic en "Login" desde la pantalla principal, se accede a la pantalla de inicio de sesión. Se ingresa la dirección y la frase mnemotécnica para autenticarse.
-    
-2.  **Registro de Usuario**: Al hacer clic en "Sign up" desde la pantalla principal, se accede a la pantalla de registro. Se generan una dirección, una frase mnemotécnica y una clave privada para el usuario.
-    
-3.  **Interacción con el ChatBox**: En la pantalla principal, se puede interactuar con el ChatBox escribiendo comandos específicos como "/help" o "/block". La respuesta se mostrará en la etiqueta correspondiente.
-    
-4.  **Obtención de Saldo**: Es posible obtener el saldo en ETH de la dirección ingresada utilizando el comando "/balance" seguido de la dirección.
-    
-5.  **Consulta de Número de Bloque**: Se puede obtener el número de bloque actual utilizando el comando "/block_number".
-    
-6.  **Conceptos de Blockchain**: La aplicación proporciona información sobre conceptos clave de blockchain como Proof of Work ("/pof"), Proof of Stake ("/pos"), transacciones ("/transaction"), etc.
+5.  **ChatBlockApp (main.py)**: The main class that initializes and runs the Kivy application.
     
 
-## Decisiones de Diseño
+### External Libraries
 
-1.  **Kivy Framework**: Se eligió Kivy debido a su capacidad para crear interfaces de usuario atractivas y su soporte multiplataforma.
+1.  **eth_account**: Used to handle Ethereum accounts, derive private keys, and verify the validity of mnemonic phrases.
+2.  **mnemonic**: Used to generate random mnemonic phrases.
+3.  **web3**: Used to interact with Ethereum nodes and obtain information such as balances and block numbers.
+
+## Application Usage
+
+1.  **Login**: Clicking "Login" on the main screen takes you to the login screen. Enter the address and mnemonic phrase to authenticate.
     
-2.  **Uso de Imágenes**: Se incorporaron imágenes (giphy.gif) como fondo para mejorar la estética de la aplicación.
+2.  **User Registration**: Clicking "Sign up" on the main screen takes you to the registration screen. It generates an address, a mnemonic phrase, and a private key for the user.
     
-3.  **Gestión de Pantallas**: Se implementó un sistema de gestión de pantallas para facilitar la transición entre las distintas secciones de la aplicación.
+3.  **Interaction with ChatBlock**: On the main screen, you can interact with the ChatBlock by typing specific commands like "/help" or "/block". The response will be displayed in the corresponding label.
     
-4.  **Integración con Ethereum**: Se utilizó la biblioteca web3 para interactuar con nodos Ethereum a través de Infura y obtener información en tiempo real.
+4.  **Balance Retrieval**: You can retrieve the ETH balance of the entered address using the "/balance" command followed by the address.
+    
+5.  **Block Number Query**: You can obtain the current block number using the "/block_number" command.
+    
+6.  **Blockchain Concepts**: The application provides information on key blockchain concepts such as Proof of Work ("/pof"), Proof of Stake ("/pos"), transactions ("/transaction"), etc.
     
 
-## Conclusión
+## Design Decisions: Foundations that Guided Development
 
-La aplicación ChatBox ofrece una experiencia interactiva para aprender sobre conceptos de blockchain de una manera amigable. La combinación de Kivy y bibliotecas especializadas permite una interfaz gráfica intuitiva y funcionalidades específicas de blockchain. ¡Disfruta explorando el mundo de blockchain a través de ChatBox!
+During the design process of the ChatBlock project in Kivy, fundamental decisions were made to ensure an attractive and functional user experience. These strategic choices range from the selection of the framework to the integration with external technologies. Here, we delve into the key design decisions:
+
+### 1. Kivy Framework: Power and Versatility
+
+The choice of Kivy as the development framework was driven by its ability to create attractive user interfaces and exceptional multiplatform support. Kivy offers powerful tools for designing applications with intuitive graphical interfaces, crucial for interactivity and user experience in the context of ChatBlock.
+
+### 2. Strategic Use of Images: Aesthetics and Visual Experience
+
+The inclusion of images, especially incorporating giphy.gif as a background, was done to significantly enhance the aesthetics of the application. This decision is based on the recognition of the importance of the visual experience for user engagement. Images provide an attractive visual context, elevating the aesthetic quality of the application.
+
+### 3. Screen Management: Smooth Interaction
+
+To ensure a smooth and coherent transition between different sections of the application, a screen management system was implemented. This decision focuses on usability and user comfort by allowing intuitive navigation between ChatBlock's main functionalities. Screen management contributes to a seamless and uncomplicated user experience.
+
+### 4. Deep Integration with Ethereum: Access to Real-time Data
+
+Integration with Ethereum was accomplished by using the web3 library, enabling interaction with Ethereum nodes via Infura. This decision is grounded in the need to obtain real-time information from the Ethereum network. It facilitates the user experience by providing accurate and updated data on balances, block numbers, and other relevant aspects of the blockchain.
+
+Together, these design decisions form the backbone of the ChatBlock application, ensuring an interactive, visually appealing, and fully functional experience for users. The combination of a robust development framework, carefully selected images, efficient screen management, and deep integration with Ethereum creates an environment conducive to exploring the fascinating concepts of blockchain in an accessible and educational manner.
+
+## Conclusion
+
+The ChatBlock application offers an interactive experience to learn about blockchain concepts in a friendly manner. The combination of Kivy and specialized libraries enables an intuitive graphical interface and specific blockchain functionalities. Enjoy exploring the world of blockchain through ChatBlock!
