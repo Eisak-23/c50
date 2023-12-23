@@ -272,7 +272,7 @@ class MainScreen(Screen):
         self.manager.current = 'login'
 
 
-class ChatBoxApp(App):
+class ChatBlockApp(App):
     def build(self):
         sm = ScreenManager()
 
@@ -290,4 +290,4 @@ class ChatBoxApp(App):
         return sm
 
 if __name__ == '__main__':
-    ChatBoxApp().run()
+    ChatBlockApp().run()
